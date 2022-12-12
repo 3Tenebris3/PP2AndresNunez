@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP2AndresNunez.MVVM.Views.ANRecargasMain"
+             Title="RecargasMain">
+    <Grid Margin="10" RowDefinitions=".05*,.05*,.1*,.5*,.05*,.1*">
+        <Label Margin="2" 
+               Text="Andrés Núñez"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontSize="Medium"
+               FontAttributes="Bold"/>
+        <Label Margin="2" 
+               Grid.Row="1" 
+               Text="Ingrese el número de teléfono"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <Grid Grid.Row="2" VerticalOptions="Center"
+              BackgroundColor="Aquamarine">
+            <Entry HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   Text="9999999999"/>
+        </Grid>
+        <Grid Grid.Row="3" ColumnDefinitions=".5*,.5*" ColumnSpacing="10">
+            <Grid Grid.Column="0" RowDefinitions=".1*,.3*,.6*" BackgroundColor="WhiteSmoke">
+                <Label Text="Seleccione el operador" 
+                       FontSize="Small"
+                       FontAttributes="Italic"
+                       Margin="5"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Grid.Row="0"/>
+                <Picker x:Name="Operadoras"
+                        Title="Seleccione el Operador"
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start">
+                    <Picker.Items>
+                        <x:String>Movistar</x:String>
+                        <x:String>Claro</x:String>
+                        <x:String>Tuenti</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Image Source=""
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="5"
+                       Grid.Row="2"/>
+                
+            </Grid>
+            <Grid Grid.Column="1" RowDefinitions=".25*,.25*,.25*,.25*" BackgroundColor="WhiteSmoke">
+                <Label Text="Selecciona el valor de la recarga"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Margin="20"/>
+                <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                             Grid.Row="1"
+                             GroupName="rercagas1"
+                             FontAttributes="Bold"
+                             HorizontalOptions="CenterAndExpand"
+                             Content="Recarga de 3$"
+                             x:Name="op1"/>
+                <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                             HorizontalOptions="CenterAndExpand"
+                             Grid.Row="2"
+                             GroupName="rercagas1"
+                             FontAttributes="Bold"
+                             Content="Recarga de 5$"
+                             x:Name="op2"/>
+                <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                             Grid.Row="3"
+                             HorizontalOptions="CenterAndExpand"
+                             GroupName="rercagas1"
+                             FontAttributes="Bold"
+                             Content="Recarga de 10$"
+                             x:Name="op3"/>
+            </Grid>
+        </Grid>
+        <Label x:Name="RecargaM"
+            Grid.Row="4"
+            Margin="10" 
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Text="No ha seleccionado una recarga"/>
+        <Button Grid.Row="5"
+                HeightRequest="50" WidthRequest="100"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontFamily="Roboto"
+                Clicked="Button_Clicked"
+                Text="Recargar"/>
+
+    </Grid>
+</ContentPage>
